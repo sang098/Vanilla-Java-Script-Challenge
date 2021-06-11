@@ -1,0 +1,117 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #eb4d4b;
+}
+
+.hidden {
+  display: none;
+}
+
+.today {
+  order: -99;
+}
+
+.quote {
+  width: 30%;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.todo-list {
+  background-color: rgba(0, 0, 0, 0.3);
+  list-style: none;
+  padding-left: 0;
+  border-radius: 5px;
+  border: 3px solid white;
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.todo-list-title {
+  position: relative;
+  width: 100%;
+  left: 0;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 5px;
+  border: 3px solid white;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+
+.todo-list li {
+  padding: 3px 15px;
+}
+
+.todo-list span {
+  color: #fff;
+}
+
+.todo-list strong {
+  color: #badc58;
+}
+
+.check-color {
+  color: #badc58;
+}
+
+/* finished list */
+
+.finished-list {
+  list-style: none;
+  padding: 0 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  max-width: 1000px;
+}
+
+.finished-list span {
+  color: #ffbe76;
+}
+
+.finished-list span:nth-child(3) {
+  color: #fff;
+}
+
+.finished-list strong:first-child {
+  color: #7ed6df;
+}
+
+.finished-list strong {
+  color: #badc58;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+  z-index: -99;
+}
