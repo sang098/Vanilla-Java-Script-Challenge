@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <h1 class="main-clock">00:00</h1>
-    <h2 class="greeint hidden">안녕하세요</h2>
+    <div class="main-info">
+      <h3 class="today"></h3>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+      <h1 class="main-clock">00:00</h1>
+      <h2 class="greeint hidden">안녕하세요</h2>
+    </div>
     <form id="login-form" class="hidden" action="#" method="GET" name="login">
       <input
         id="login-input"
@@ -20,29 +27,33 @@
         autocomplete="off"
       />
     </form>
-    <h3 class="today"></h3>
-    <div class="quote">
-      <p class="quote-content"></p>
-      <span class="quote-author"></span>
-    </div>
-    <div class="today-task">
-      <h1>일일 퀘스트</h1>
-      <form action="#" method="GET" id="todo-form">
-        <label for="quest">퀘스트</label>
-        <input type="text" id="quest" autocomplete="off" required />
-        <label for="reward">보상</label>
-        <input type="text" id="reward" autocomplete="off" />
-        <button type="submit" id="submit-btn"></button>
-      </form>
+
+    <div class="main-box">
+      <div class="quote">
+        <p class="quote-content"></p>
+        <span class="quote-author"></span>
+      </div>
+      <div class="today-task">
+        <form action="#" method="GET" id="todo-form">
+          <div class="todo-row">
+            <label for="quest">퀘스트</label>
+            <input type="text" id="quest" autocomplete="off" required />
+          </div>
+          <div class="todo-row">
+            <label for="reward">보상</label>
+            <input type="text" id="reward" autocomplete="off" />
+          </div>
+          <button type="submit" id="submit-btn"></button>
+        </form>
+      </div>
       <ul class="todo-list">
-        <li class="todo-list-title">퀘스트 알림이</li>
+        <li class="todo-list-title">퀘스트 목록</li>
       </ul>
-      <ul class="finished-list"></ul>
+      <ul class="finished-list">
+        <li class="finished-list-title">보상 목록</li>
+      </ul>
     </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
+
     <!-- <img src="./img/0.jpeg" alt="" class="background" /> -->
     <script src="./JS/clock.js"></script>
     <script src="./JS/username.js"></script>
