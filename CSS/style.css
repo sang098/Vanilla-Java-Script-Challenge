@@ -264,3 +264,20 @@ input {
   opacity: 0.4;
   z-index: -99;
 }
+
+.size-text {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1399px) {
+  section:not(.size-text) {
+    display: none;
+  }
+  .size-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+  }
+}
