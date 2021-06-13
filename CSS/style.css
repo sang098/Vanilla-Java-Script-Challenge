@@ -15,6 +15,12 @@ body {
   align-items: center;
 }
 
+section {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+}
+
 #background-img {
   width: 100%;
   height: 100%;
@@ -56,7 +62,7 @@ input {
 .main-info {
   position: fixed;
   top: 15px;
-  right: 30px;
+  left: 1230px;
   text-align: center;
 }
 
@@ -94,7 +100,7 @@ input {
 .main-box {
   position: fixed;
   top: 10px;
-  right: 500px;
+  left: 680px;
   width: 500px;
   padding: 1%;
   border: 2px solid black;
@@ -158,7 +164,7 @@ input {
   min-height: 100px;
   position: fixed;
   top: 300px;
-  right: 500px;
+  left: 680px;
 }
 
 .todo-list-title {
