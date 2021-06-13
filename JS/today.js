@@ -24,9 +24,9 @@ function getToday() {
   const month = nowDate.getMonth() + 1;
   const date = nowDate.getDate();
   const day = getDayString(nowDate.getDay());
-  today.innerText = `${year}년${month < 10 ? `0${month}` : `${month}`}월${
+  today.innerText = `${year}.${month < 10 ? `0${month}` : `${month}`}.${
     date < 10 ? `0${date}` : `${date}`
-  }일${day}요일`;
+  } ${day}`;
 }
 
 getToday();

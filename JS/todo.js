@@ -27,11 +27,13 @@ function paintFinished(item) {
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "✖";
   deleteBtn.addEventListener("click", deleteFinished);
-  li.appendChild(playerName);
-  li.appendChild(time);
-  li.appendChild(span);
-  li.appendChild(strong);
-  li.appendChild(decoText);
+  const groupOne = document.createElement("div");
+  groupOne.appendChild(playerName);
+  groupOne.appendChild(time);
+  groupOne.appendChild(span);
+  groupOne.appendChild(strong);
+  groupOne.appendChild(decoText);
+  li.appendChild(groupOne);
   li.appendChild(deleteBtn);
   finishedList.appendChild(li);
 }
@@ -63,7 +65,7 @@ function deleteFinished(event) {
 }
 
 function deleteQuest(event) {
-  const li = event.target.parentElement;
+  const li = event.target.parentElement.parentElement; //여기로 돌아와
   li.remove();
   pendingQuest = pendingQuest.filter(
     (item) => parseInt(item.id, 10) !== parseInt(li.id, 10)
@@ -91,19 +93,32 @@ function paintQuest(item) {
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "✖";
   deleteBtn.addEventListener("click", deleteQuest);
-  li.appendChild(span);
-  li.appendChild(decoTextOne);
-  li.appendChild(strong);
-  li.appendChild(decoTextTwo);
-  li.appendChild(deleteBtn);
-  li.appendChild(finishBtn);
+  const groupOne = document.createElement("div");
+  const groupTwo = document.createElement("div");
+
+  //원본
+  // li.appendChild(span);
+  // li.appendChild(decoTextOne);
+  // li.appendChild(strong);
+  // li.appendChild(decoTextTwo);
+  // li.appendChild(deleteBtn);
+  // li.appendChild(finishBtn);
+
+  groupOne.appendChild(span);
+  groupOne.appendChild(decoTextOne);
+  groupOne.appendChild(strong);
+  groupOne.appendChild(decoTextTwo);
+  groupTwo.appendChild(deleteBtn);
+  groupTwo.appendChild(finishBtn);
+  li.appendChild(groupOne);
+  li.appendChild(groupTwo);
   todoList.appendChild(li);
 }
 
 function addQuest(event) {
   event.preventDefault();
   const tempQuest = quest.value;
-  const tempReward = reward.value;
+  const tempReward = `${reward.value === "" ? `보람` : `${reward.value}`}`;
   quest.value = "";
   reward.value = "";
 
@@ -124,7 +139,7 @@ function addFinished(event) {
   const hour = finishedDate.getHours();
   const minute = finishedDate.getMinutes();
   event.preventDefault();
-  const parentTemp = event.target.parentElement;
+  const parentTemp = event.target.parentElement.parentElement;
   const finishedObj = {
     quest: parentTemp.querySelector("span").innerText,
     reward: parentTemp.querySelector("strong").innerText,

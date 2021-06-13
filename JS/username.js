@@ -1,27 +1,25 @@
 const loginForm = document.getElementById("login-form");
 const longinInput = document.getElementById("login-input");
-const greeting = document.querySelector(".greeint");
+const greeting = document.querySelector(".greeting");
 
 const USER_NAME = "username";
 const HIDDEN_CLASS = "hidden";
 
 let nameCheck;
 
-function getGreeting(params) {
-  nameCheck = localStorage.getItem(USER_NAME);
-  greeting.innerText = `오늘도 좋은 하루 보내세요. ${nameCheck}!`;
+function getGreeting() {
+  greeting.innerText = `${nameCheck}님! 오늘도 좋은 하루 보내세요. `;
 }
 
 function changeForm() {
   getGreeting();
-  greeting.classList.remove(HIDDEN_CLASS);
   loginForm.classList.add(HIDDEN_CLASS);
 }
 
 function saveUsername(event) {
   event.preventDefault();
-  const inputName = longinInput.value;
-  localStorage.setItem(USER_NAME, inputName);
+  nameCheck = longinInput.value;
+  localStorage.setItem(USER_NAME, nameCheck);
   changeForm();
   longinInput.value = "";
 }
@@ -29,7 +27,6 @@ function saveUsername(event) {
 function nameInit() {
   nameCheck = localStorage.getItem(USER_NAME);
   if (nameCheck !== null) {
-    greeting.classList.remove(HIDDEN_CLASS);
     getGreeting();
   } else {
     loginForm.classList.remove(HIDDEN_CLASS);

@@ -7,7 +7,8 @@ function choseImage() {
   choseBg.src = `./img/${randomImage}.jpeg`;
   //   choseBg.src = `./img/${randomImage}`;
   choseBg.classList.add("background");
-  document.body.appendChild(choseBg);
+  document.getElementById("background-img").appendChild(choseBg);
+  // document.body.appendChild(choseBg);
 }
 
 choseImage();

@@ -15,10 +15,33 @@ body {
   align-items: center;
 }
 
+#background-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#background-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* width: auto;
+  height: 100%; */
+}
+
 button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: #eb4d4b;
+  outline: none;
+}
+
+input {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  font-size: 16px;
+  padding: 0 15px;
 }
 
 .hidden {
@@ -38,22 +61,32 @@ button {
 }
 
 .main-info .today {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .main-info #weather {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .main-info .main-clock {
   font-size: 55px;
 }
 
-.main-info .greeint {
+.main-info .greeting {
   display: block;
   padding: 7px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-info #login-form #login-input {
+  width: 300px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 3);
+  outline: none;
+  text-align: center;
 }
 
 /* main box */
@@ -68,13 +101,18 @@ button {
 }
 
 .quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 150px;
   padding: 2%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid black;
   margin-bottom: 10px;
   overflow-y: auto;
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: -0.02em;
 }
 
@@ -113,8 +151,7 @@ button {
   background-color: rgba(0, 0, 0, 0.3);
   list-style: none;
   padding-left: 0;
-  border-radius: 5px;
-  border: 3px solid white;
+  border: 2px solid black;
   width: 500px;
   height: 600px;
   overflow-y: auto;
@@ -130,7 +167,6 @@ button {
   left: 0;
   color: white;
   padding: 3px 15px;
-  border-radius: 5px;
   border: 3px solid white;
   background-color: rgba(0, 0, 0, 0.8);
   font-size: 22px;
@@ -138,7 +174,15 @@ button {
 }
 
 .todo-list li {
-  padding: 3px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 15px;
+}
+
+.todo-list li div {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .todo-list span {
@@ -165,6 +209,7 @@ button {
   list-style: none;
   padding: 0;
   background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid black;
   position: fixed;
 }
 
@@ -174,7 +219,6 @@ button {
   left: 0;
   color: white;
   padding: 3px 15px;
-  border-radius: 5px;
   border: 3px solid white;
   background-color: rgba(0, 0, 0, 0.8);
   font-size: 22px;
@@ -182,6 +226,9 @@ button {
 }
 
 .finished-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 2px 15px;
 }
 

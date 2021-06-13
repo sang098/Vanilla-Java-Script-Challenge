@@ -15,18 +15,18 @@
         <span></span>
       </div>
       <h1 class="main-clock">00:00</h1>
-      <h2 class="greeint hidden">안녕하세요</h2>
+      <h2 class="greeting">로그인이 필요합니다</h2>
+      <form id="login-form" class="hidden" action="#" method="GET" name="login">
+        <input
+          id="login-input"
+          type="text"
+          placeholder="사용하실 닉네임을 적어주세요."
+          required
+          maxlength="5"
+          autocomplete="off"
+        />
+      </form>
     </div>
-    <form id="login-form" class="hidden" action="#" method="GET" name="login">
-      <input
-        id="login-input"
-        type="text"
-        placeholder="사용하실 닉네임을 적어주세요."
-        required
-        maxlength="12"
-        autocomplete="off"
-      />
-    </form>
 
     <div class="main-box">
       <div class="quote">
@@ -53,7 +53,7 @@
         <li class="finished-list-title">보상 목록</li>
       </ul>
     </div>
-
+    <div id="background-img"></div>
     <!-- <img src="./img/0.jpeg" alt="" class="background" /> -->
     <script src="./JS/clock.js"></script>
     <script src="./JS/username.js"></script>
